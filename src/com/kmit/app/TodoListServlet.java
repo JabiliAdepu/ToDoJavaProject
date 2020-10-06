@@ -80,7 +80,7 @@ public class TodoListServlet extends HttpServlet {
 					+ "<li><a href='TodoListServlet'>Todos</a></li>"
 					+ "</ul>"
 					+ "<ul class='nav navbar-nav navbar-right'>"
-					+ "<li><a href='AccoutUpdateServlet'><font size='4'>Hi, "+name+"</font></a></li>"
+					+ "<li><a href='AccountUpdateServlet'><font size='4'>Hi, "+name+"</font></a></li>"
 					+ "<li><a href='LogoutServlet'>Logout</a></li>"
 					+ "</ul>"
 					+ "</nav>"

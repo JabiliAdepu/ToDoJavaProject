@@ -1,5 +1,6 @@
 package com.kmit.app;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -15,16 +16,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
-@WebServlet("/AccoutUpdateServlet")
+@WebServlet("/AccountUpdateServlet")
 public class AccountUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
+	private static final String SAVE_DIR = "uploadFiles";
+
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int user_id=(int) request.getSession().getAttribute("user_id");
 		String name = (String) request.getSession().getAttribute("name");
-
+		String uname = (String) request.getSession().getAttribute("uname");
 		
 		ServletContext sc = getServletContext();
 	    String driverName=sc.getInitParameter("driverName"); 
@@ -36,7 +38,7 @@ public class AccountUpdateServlet extends HttpServlet {
 		PreparedStatement pstmt =null;
 		ResultSet rs = null;
 		
-		String fileName = "";
+		String fileName = SAVE_DIR + File.separator + uname+"_"+user_id+".png";;
 		
 		try
 		{
